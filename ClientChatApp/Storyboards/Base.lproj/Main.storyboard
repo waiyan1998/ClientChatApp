@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22684"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Chat List View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="ChatListViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="ChatListViewController" customModule="ClientChatApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="tui-i8-749">
+                                <rect key="frame" x="25" y="59" width="343" height="759"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="gPB-4o-tzu"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="NUd-hO-VBW"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="tui-i8-749" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="25" id="BEm-VK-asg"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="tui-i8-749" secondAttribute="trailing" constant="25" id="kBf-eG-epP"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="tui-i8-749" secondAttribute="bottom" id="qpj-4s-rF7"/>
+                            <constraint firstItem="tui-i8-749" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="xXH-gN-ggM"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="TableView" destination="tui-i8-749" id="e6E-2x-hgR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="222" y="-227"/>
+        </scene>
+        <!--Message View Controller-->
+        <scene sceneID="h4G-jX-QSU">
+            <objects>
+                <viewController storyboardIdentifier="MessageViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="E1y-Bx-gz1" customClass="MessageViewController" customModule="ClientChatApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="EQK-5F-klu">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="6ha-t4-TOc">
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <subviews>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="f37-Cv-jhO">
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="684"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <connections>
+                                            <outlet property="dataSource" destination="E1y-Bx-gz1" id="IQs-8e-0Wn"/>
+                                            <outlet property="delegate" destination="E1y-Bx-gz1" id="R0H-x2-EeQ"/>
+                                        </connections>
+                                    </tableView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kjp-GX-nio">
+                                        <rect key="frame" x="0.0" y="684" width="393" height="75"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Wdc-Fc-Euh">
+                                                <rect key="frame" x="15" y="15" width="363" height="45"/>
+                                                <subviews>
+                                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="clV-1N-4fc">
+                                                        <rect key="frame" x="0.0" y="0.0" width="287.66666666666669" height="45"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TQ1-lh-fn8">
+                                                        <rect key="frame" x="295.66666666666669" y="0.0" width="67.333333333333314" height="45"/>
+                                                        <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" secondItem="TQ1-lh-fn8" secondAttribute="height" multiplier="1.5:1" id="sNl-1e-Nca"/>
+                                                        </constraints>
+                                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                                        <state key="normal" image="paperplane.fill" catalog="system"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                                <real key="value" value="10"/>
+                                                            </userDefinedRuntimeAttribute>
+                                                        </userDefinedRuntimeAttributes>
+                                                        <connections>
+                                                            <action selector="sendClick:" destination="E1y-Bx-gz1" eventType="touchDown" id="XHg-0Y-88H"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <constraints>
+                                            <constraint firstItem="Wdc-Fc-Euh" firstAttribute="top" secondItem="Kjp-GX-nio" secondAttribute="top" constant="15" id="JYW-aT-dXg"/>
+                                            <constraint firstAttribute="trailing" secondItem="Wdc-Fc-Euh" secondAttribute="trailing" constant="15" id="Udl-hj-HxH"/>
+                                            <constraint firstAttribute="bottom" secondItem="Wdc-Fc-Euh" secondAttribute="bottom" constant="15" id="po4-WH-vqo"/>
+                                            <constraint firstItem="Wdc-Fc-Euh" firstAttribute="leading" secondItem="Kjp-GX-nio" secondAttribute="leading" constant="15" id="qz2-7J-qhy"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="p40-g5-I0l"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="6ha-t4-TOc" firstAttribute="leading" secondItem="EQK-5F-klu" secondAttribute="leading" id="6ua-kp-t9m"/>
+                            <constraint firstItem="p40-g5-I0l" firstAttribute="trailing" secondItem="6ha-t4-TOc" secondAttribute="trailing" id="dbu-FO-cdf"/>
+                            <constraint firstItem="6ha-t4-TOc" firstAttribute="top" secondItem="p40-g5-I0l" secondAttribute="top" id="oLT-Ve-YFH"/>
+                            <constraint firstItem="p40-g5-I0l" firstAttribute="bottom" secondItem="6ha-t4-TOc" secondAttribute="bottom" id="oR7-mC-10t"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="Message_TF" destination="clV-1N-4fc" id="XpJ-AG-aS2"/>
+                        <outlet property="TableView" destination="f37-Cv-jhO" id="qoZ-fC-yqH"/>
+                        <outlet property="bottom_height" destination="oR7-mC-10t" id="fwJ-Re-iRx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="455-V0-TN7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1151.9083969465648" y="-227.46478873239437"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="paperplane.fill" catalog="system" width="128" height="119"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
