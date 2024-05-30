@@ -5,7 +5,7 @@ import Combine
 
 class ChatListsViewModel: ObservableObject {
     
-    @Published var lists : [Chat] = []
+    @Published var lists : [User] = []
     @Published var isLoading = false
     @Published var isShowingAlert  = false
     @Published var isNavigate  = false
@@ -19,8 +19,9 @@ class ChatListsViewModel: ObservableObject {
         let request = UserListsRequest()
       
         print(request.headers)
-        NetworkManager.execute(request , Chat.self)
-            .receive(on: DispatchQueue.main)
+        
+        NetworkManager.execute(request , User.self)
+            .receive(on: RunLoop.main)
             .sink(receiveCompletion: { completion in
                     switch completion {
                     case .finished:
@@ -60,7 +61,7 @@ class ChatListsViewModel: ObservableObject {
 
 struct UserListsRequest  : APIRequest {
 
-  var path: String { return Routes.Chat.lists }
+  var path: String { return Routes.Auth.lists }
   var method: HTTPMethod { return .GET }
   var headers: [String : String]  {  return ["Authorization" : "Bearer " + (LocalStorage.shared.getUserInfo()?.access_token ?? "")  ] }
   var body: Data? { return nil }

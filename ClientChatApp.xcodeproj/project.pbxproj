@@ -206,7 +206,6 @@
 		18180D412BFC37EA00CA20ED /* App */ = {
 			isa = PBXGroup;
 			children = (
-				18180D682BFC44C500CA20ED /* Constants */,
 				18180D4D2BFC41A900CA20ED /* Base */,
 				18180D0C2BFC350E00CA20ED /* AppDelegate.swift */,
 				18180D0E2BFC350E00CA20ED /* SceneDelegate.swift */,
@@ -281,13 +280,6 @@
 				18180D662BFC449800CA20ED /* NetworkManager.swift */,
 			);
 			path = Network;
-			sourceTree = "<group>";
-		};
-		18180D682BFC44C500CA20ED /* Constants */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Constants;
 			sourceTree = "<group>";
 		};
 		18180D692BFC458000CA20ED /* ViewModels */ = {

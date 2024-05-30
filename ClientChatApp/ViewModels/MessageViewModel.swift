@@ -12,7 +12,12 @@ class MessageViewModel: ObservableObject {
   private let webSocketTask: URLSessionWebSocketTask
 
     init() {
-        let url = URL(string: Routes.Chat.message)! // Replace with your server URL
+        
+        var url = URL(string: Routes.Chat.connect)! 
+        let user_id = LocalStorage.shared.getUserInfo()?.user_id ?? ""
+        url.append(queryItems: [URLQueryItem(name: "userID", value: user_id)])
+        
+        print(url)
             webSocketTask = URLSession.shared.webSocketTask(with: url)
             webSocketTask.resume()
             listenForMessages()
@@ -41,7 +46,9 @@ class MessageViewModel: ObservableObject {
       webSocketTask.receive { [weak self] result in
               switch result {
               case .success(let message):
+                 
                 if case let .string(text) = message {
+                    print(text)
                     let m = text.decode(as: Message.self)
                     self?.messages.append(m ?? Message())
                 }

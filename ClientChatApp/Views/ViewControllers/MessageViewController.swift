@@ -33,7 +33,7 @@ class MessageViewController: UIViewController {
         viewModel.$messages
             .receive(on: RunLoop.main)
             .sink { [weak self] lists in
-                
+                print(lists)
                 self?.TableView.reloadData()
             }
             .store(in: &viewModel.cancellables)
@@ -41,7 +41,7 @@ class MessageViewController: UIViewController {
     
   
      @IBAction func sendClick(_ sender: UIButton) {
-         let message = Message(content: self.Message_TF.text , sender_id: sender_id , recipient_id: recipient_id , createdDate:  Date().toString())
+         let message = Message(content: self.Message_TF.text , sender_id: sender_id , recipient_id: recipient_id )
          viewModel.sendMessage(message)
      }
     

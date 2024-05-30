@@ -8,11 +8,11 @@ class ChatCell: UITableViewCell {
     @IBOutlet weak var Name_Label: UILabel!
     
     weak var container : UIViewController?
-     var data : Chat?
+     var data : User?
     {
         didSet {
-            self.NameIcon_Label.text = data?.members?.first?.username?.firstCharactor
-            self.Name_Label.text = data?.members?.map({ $0.username ?? "" }).joined(separator: ",")
+            self.NameIcon_Label.text = data?.username?.firstCharactor
+            self.Name_Label.text = data?.username
         }
     }
     
@@ -26,7 +26,7 @@ class ChatCell: UITableViewCell {
     
     @IBAction func ClickToChat(_ sender: UIButton) {
         let vc = MessageViewController.initiate(appStoryBoard: .Main)
-            vc.recipient_id = data?.members?.first?.user_id ?? ""
+            vc.recipient_id = data?.user_id ?? "" 
         
         self.container?.show(vc , sender: nil)
         print("Click")
