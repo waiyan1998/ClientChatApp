@@ -67,7 +67,7 @@ class LoginViewController: BaseViewController {
             .sink { [weak self] isNavigate in
                 
                 if isNavigate {
-                    let vc = ChatListViewController.initiate(appStoryBoard: .Main)
+                    let vc = HomeViewController.initiate(appStoryBoard: .Main)
                     
                     self?.show(vc, sender: nil)
                 }

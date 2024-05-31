@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="32700.99.1234" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22685"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="GdC-6r-GbZ" customClass="PeopleCell" customModule="ClientChatApp" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="BG1-qo-fu1">
+                        <rect key="frame" x="5" y="5" width="50" height="50"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="A" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="eZZ-VJ-XKO">
+                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="25"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="mxV-E1-eeI"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="50" id="DKQ-oz-zQD"/>
+                            <constraint firstAttribute="width" constant="50" id="j2M-kJ-xKY"/>
+                        </constraints>
+                    </stackView>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="VLr-Mb-7DX">
+                        <rect key="frame" x="42" y="43" width="15" height="13.666666666666671"/>
+                        <color key="tintColor" systemColor="systemGreenColor"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="15" id="8fC-xx-bgH"/>
+                            <constraint firstAttribute="height" constant="15" id="fGt-eZ-OZA"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+            </view>
+            <viewLayoutGuide key="safeArea" id="ksb-zF-88c"/>
+            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="BG1-qo-fu1" firstAttribute="centerX" secondItem="GdC-6r-GbZ" secondAttribute="centerX" id="1Q5-OX-oGZ"/>
+                <constraint firstItem="BG1-qo-fu1" firstAttribute="leading" secondItem="GdC-6r-GbZ" secondAttribute="leading" constant="5" id="3Oa-1e-a2u"/>
+                <constraint firstAttribute="trailing" secondItem="BG1-qo-fu1" secondAttribute="trailing" constant="5" id="Lx5-Uq-eeJ"/>
+                <constraint firstItem="BG1-qo-fu1" firstAttribute="top" secondItem="GdC-6r-GbZ" secondAttribute="top" constant="5" id="ZRA-SA-fFW"/>
+                <constraint firstAttribute="bottom" secondItem="VLr-Mb-7DX" secondAttribute="bottom" constant="3" id="gMA-Bu-Yqt"/>
+                <constraint firstAttribute="bottom" secondItem="BG1-qo-fu1" secondAttribute="bottom" constant="5" id="gkx-rX-d9b"/>
+                <constraint firstAttribute="trailing" secondItem="VLr-Mb-7DX" secondAttribute="trailing" constant="3" id="lF1-da-XXf"/>
+                <constraint firstItem="BG1-qo-fu1" firstAttribute="centerY" secondItem="GdC-6r-GbZ" secondAttribute="centerY" id="whN-Tn-pkq"/>
+            </constraints>
+            <size key="customSize" width="72" height="142"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                    <real key="value" value="0.0"/>
+                </userDefinedRuntimeAttribute>
+                <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                    <real key="value" value="0.0"/>
+                </userDefinedRuntimeAttribute>
+            </userDefinedRuntimeAttributes>
+            <connections>
+                <outlet property="Name_Lb" destination="eZZ-VJ-XKO" id="dmq-B8-FAR"/>
+                <outlet property="status_imgView" destination="VLr-Mb-7DX" id="AvF-v6-YFf"/>
+            </connections>
+            <point key="canvasLocation" x="-143.5114503816794" y="21.83098591549296"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="circle.fill" catalog="system" width="128" height="123"/>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

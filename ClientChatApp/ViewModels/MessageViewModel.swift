@@ -3,6 +3,9 @@ import Foundation
 import Combine
 
 class MessageViewModel: ObservableObject {
+    
+  
+
   @Published var messages: [Message] = []
   @Published var messageText: String = ""
     var cancellables = Set<AnyCancellable>()

@@ -28,3 +28,4 @@ public extension UICollectionView {
         register(UINib(nibName: strID, bundle: nil), forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: strID)
     }
 }
+

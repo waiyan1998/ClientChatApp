@@ -235,6 +235,15 @@ extension UIView {
         self.layer.addSublayer(shapeLayer)
         self.layer.masksToBounds = true
     }
+
+
+    func containerVC() -> UIViewController? {
+        if let nextResponder = self.next as? UIViewController {
+            return nextResponder
+        } else if let nextResponder = self.next as? UIView {
+            return nextResponder.containerVC()
+        } else {
+            return nil
+        }
+    }
 }
-
-

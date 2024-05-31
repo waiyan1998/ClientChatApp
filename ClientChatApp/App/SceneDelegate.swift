@@ -24,7 +24,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         if LocalStorage.shared.getUserInfo()?.access_token?.isValid  ?? false  {
           
-            let vc = ChatListViewController.initiate(appStoryBoard: .Main)
+            let vc = HomeViewController.initiate(appStoryBoard: .Main)
             let navigation = UINavigationController(rootViewController: vc)
             window.rootViewController = navigation
            

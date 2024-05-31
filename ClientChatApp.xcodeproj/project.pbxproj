@@ -20,7 +20,7 @@
 		18180D402BFC370300CA20ED /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18180D3F2BFC370300CA20ED /* UIView.swift */; };
 		18180D452BFC382700CA20ED /* AppStoryboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18180D442BFC382700CA20ED /* AppStoryboard.swift */; };
 		18180D472BFC39F700CA20ED /* NSObject .swift in Sources */ = {isa = PBXBuildFile; fileRef = 18180D462BFC39F700CA20ED /* NSObject .swift */; };
-		18180D492BFC3EA400CA20ED /* ChatListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18180D482BFC3EA400CA20ED /* ChatListViewController.swift */; };
+		18180D492BFC3EA400CA20ED /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18180D482BFC3EA400CA20ED /* HomeViewController.swift */; };
 		18180D4C2BFC415E00CA20ED /* UIViewController .swift in Sources */ = {isa = PBXBuildFile; fileRef = 18180D4B2BFC415E00CA20ED /* UIViewController .swift */; };
 		18180D4F2BFC41D000CA20ED /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18180D4E2BFC41D000CA20ED /* BaseViewController.swift */; };
 		18180D512BFC41F500CA20ED /* LocalStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18180D502BFC41F500CA20ED /* LocalStorage.swift */; };
@@ -34,7 +34,7 @@
 		18180D642BFC438C00CA20ED /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18180D632BFC438C00CA20ED /* UIColor.swift */; };
 		18180D672BFC449800CA20ED /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18180D662BFC449800CA20ED /* NetworkManager.swift */; };
 		18180D6D2BFC45B800CA20ED /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18180D6A2BFC45B800CA20ED /* AuthViewModel.swift */; };
-		18180D6E2BFC45B800CA20ED /* ChatListsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18180D6B2BFC45B800CA20ED /* ChatListsViewModel.swift */; };
+		18180D6E2BFC45B800CA20ED /* UsersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18180D6B2BFC45B800CA20ED /* UsersViewModel.swift */; };
 		18180D6F2BFC45B800CA20ED /* MessageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18180D6C2BFC45B800CA20ED /* MessageViewModel.swift */; };
 		18180D712BFC482000CA20ED /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18180D702BFC482000CA20ED /* String.swift */; };
 		18180D762BFC49E800CA20ED /* ChatCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18180D742BFC49E800CA20ED /* ChatCell.swift */; };
@@ -42,9 +42,16 @@
 		18180D7A2BFC54AC00CA20ED /* AppTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18180D792BFC54AC00CA20ED /* AppTextField.swift */; };
 		18466B5E2BFEF42600E47513 /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18466B5C2BFEF42600E47513 /* MessageCell.swift */; };
 		18466B5F2BFEF42600E47513 /* MessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18466B5D2BFEF42600E47513 /* MessageCell.xib */; };
-		18466B612BFEF54E00E47513 /* MessageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18466B602BFEF54E00E47513 /* MessageViewController.swift */; };
+		18466B612BFEF54E00E47513 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18466B602BFEF54E00E47513 /* ChatViewController.swift */; };
 		18466B642BFEFAF400E47513 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 18466B632BFEFAF400E47513 /* IQKeyboardManagerSwift */; };
 		18466B662BFF006800E47513 /* Date .swift in Sources */ = {isa = PBXBuildFile; fileRef = 18466B652BFF006800E47513 /* Date .swift */; };
+		18A982DC2C09765800F2C89F /* PeopleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18A982DB2C09765800F2C89F /* PeopleCell.xib */; };
+		18A982DD2C09765800F2C89F /* PeopleCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A982DA2C09765800F2C89F /* PeopleCell.swift */; };
+		18A982E02C09774D00F2C89F /* UserListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18A982DF2C09774D00F2C89F /* UserListCell.xib */; };
+		18A982E12C09774D00F2C89F /* UserListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A982DE2C09774D00F2C89F /* UserListCell.swift */; };
+		18A982E32C09861100F2C89F /* URL.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A982E22C09861100F2C89F /* URL.swift */; };
+		18A982E52C09866500F2C89F /* Routes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A982E42C09866500F2C89F /* Routes.swift */; };
+		18A982E72C098FB100F2C89F /* AlignedCollectionViewFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18A982E62C098FB100F2C89F /* AlignedCollectionViewFlowLayout.swift */; };
 		18CB3AF52C0092F200B943E5 /* PaddingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18CB3AF42C0092F200B943E5 /* PaddingLabel.swift */; };
 /* End PBXBuildFile section */
 
@@ -83,7 +90,7 @@
 		18180D3F2BFC370300CA20ED /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		18180D442BFC382700CA20ED /* AppStoryboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStoryboard.swift; sourceTree = "<group>"; };
 		18180D462BFC39F700CA20ED /* NSObject .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject .swift"; sourceTree = "<group>"; };
-		18180D482BFC3EA400CA20ED /* ChatListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatListViewController.swift; sourceTree = "<group>"; };
+		18180D482BFC3EA400CA20ED /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		18180D4B2BFC415E00CA20ED /* UIViewController .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController .swift"; sourceTree = "<group>"; };
 		18180D4E2BFC41D000CA20ED /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		18180D502BFC41F500CA20ED /* LocalStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalStorage.swift; sourceTree = "<group>"; };
@@ -97,7 +104,7 @@
 		18180D632BFC438C00CA20ED /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		18180D662BFC449800CA20ED /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		18180D6A2BFC45B800CA20ED /* AuthViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
-		18180D6B2BFC45B800CA20ED /* ChatListsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatListsViewModel.swift; sourceTree = "<group>"; };
+		18180D6B2BFC45B800CA20ED /* UsersViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UsersViewModel.swift; sourceTree = "<group>"; };
 		18180D6C2BFC45B800CA20ED /* MessageViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageViewModel.swift; sourceTree = "<group>"; };
 		18180D702BFC482000CA20ED /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		18180D742BFC49E800CA20ED /* ChatCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatCell.swift; sourceTree = "<group>"; };
@@ -105,8 +112,15 @@
 		18180D792BFC54AC00CA20ED /* AppTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTextField.swift; sourceTree = "<group>"; };
 		18466B5C2BFEF42600E47513 /* MessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
 		18466B5D2BFEF42600E47513 /* MessageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessageCell.xib; sourceTree = "<group>"; };
-		18466B602BFEF54E00E47513 /* MessageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageViewController.swift; sourceTree = "<group>"; };
+		18466B602BFEF54E00E47513 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		18466B652BFF006800E47513 /* Date .swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date .swift"; sourceTree = "<group>"; };
+		18A982DA2C09765800F2C89F /* PeopleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleCell.swift; sourceTree = "<group>"; };
+		18A982DB2C09765800F2C89F /* PeopleCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PeopleCell.xib; sourceTree = "<group>"; };
+		18A982DE2C09774D00F2C89F /* UserListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserListCell.swift; sourceTree = "<group>"; };
+		18A982DF2C09774D00F2C89F /* UserListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserListCell.xib; sourceTree = "<group>"; };
+		18A982E22C09861100F2C89F /* URL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URL.swift; sourceTree = "<group>"; };
+		18A982E42C09866500F2C89F /* Routes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routes.swift; sourceTree = "<group>"; };
+		18A982E62C098FB100F2C89F /* AlignedCollectionViewFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlignedCollectionViewFlowLayout.swift; sourceTree = "<group>"; };
 		18CB3AF42C0092F200B943E5 /* PaddingLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaddingLabel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -199,6 +213,7 @@
 				18180D542BFC427300CA20ED /* UITableView.swift */,
 				18180D632BFC438C00CA20ED /* UIColor.swift */,
 				18180D702BFC482000CA20ED /* String.swift */,
+				18A982E22C09861100F2C89F /* URL.swift */,
 			);
 			path = "Extensions ";
 			sourceTree = "<group>";
@@ -219,8 +234,8 @@
 			isa = PBXGroup;
 			children = (
 				18180D102BFC350E00CA20ED /* LoginViewController.swift */,
-				18180D482BFC3EA400CA20ED /* ChatListViewController.swift */,
-				18466B602BFEF54E00E47513 /* MessageViewController.swift */,
+				18180D482BFC3EA400CA20ED /* HomeViewController.swift */,
+				18466B602BFEF54E00E47513 /* ChatViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -239,6 +254,7 @@
 			isa = PBXGroup;
 			children = (
 				18CB3AF42C0092F200B943E5 /* PaddingLabel.swift */,
+				18A982E62C098FB100F2C89F /* AlignedCollectionViewFlowLayout.swift */,
 				18180D502BFC41F500CA20ED /* LocalStorage.swift */,
 			);
 			path = Helpers;
@@ -278,6 +294,7 @@
 			isa = PBXGroup;
 			children = (
 				18180D662BFC449800CA20ED /* NetworkManager.swift */,
+				18A982E42C09866500F2C89F /* Routes.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -285,7 +302,7 @@
 		18180D692BFC458000CA20ED /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				18180D6B2BFC45B800CA20ED /* ChatListsViewModel.swift */,
+				18180D6B2BFC45B800CA20ED /* UsersViewModel.swift */,
 				18180D6C2BFC45B800CA20ED /* MessageViewModel.swift */,
 				18180D6A2BFC45B800CA20ED /* AuthViewModel.swift */,
 			);
@@ -295,20 +312,22 @@
 		18180D722BFC49B200CA20ED /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				18180D732BFC49BC00CA20ED /* TableCells */,
 				18180D422BFC37F600CA20ED /* ViewControllers */,
+				18180D732BFC49BC00CA20ED /* Cells */,
 			);
 			path = Views;
 			sourceTree = "<group>";
 		};
-		18180D732BFC49BC00CA20ED /* TableCells */ = {
+		18180D732BFC49BC00CA20ED /* Cells */ = {
 			isa = PBXGroup;
 			children = (
 				18180D782BFC49F100CA20ED /* Xibs */,
 				18180D742BFC49E800CA20ED /* ChatCell.swift */,
+				18A982DE2C09774D00F2C89F /* UserListCell.swift */,
 				18466B5C2BFEF42600E47513 /* MessageCell.swift */,
+				18A982DA2C09765800F2C89F /* PeopleCell.swift */,
 			);
-			path = TableCells;
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		18180D782BFC49F100CA20ED /* Xibs */ = {
@@ -316,6 +335,8 @@
 			children = (
 				18180D752BFC49E800CA20ED /* ChatCell.xib */,
 				18466B5D2BFEF42600E47513 /* MessageCell.xib */,
+				18A982DB2C09765800F2C89F /* PeopleCell.xib */,
+				18A982DF2C09774D00F2C89F /* UserListCell.xib */,
 			);
 			path = Xibs;
 			sourceTree = "<group>";
@@ -433,6 +454,8 @@
 				18180D3D2BFC354700CA20ED /* Auth.storyboard in Resources */,
 				18466B5F2BFEF42600E47513 /* MessageCell.xib in Resources */,
 				18180D162BFC350F00CA20ED /* Assets.xcassets in Resources */,
+				18A982DC2C09765800F2C89F /* PeopleCell.xib in Resources */,
+				18A982E02C09774D00F2C89F /* UserListCell.xib in Resources */,
 				18180D772BFC49E800CA20ED /* ChatCell.xib in Resources */,
 				18180D192BFC350F00CA20ED /* Base in Resources */,
 				18180D142BFC350E00CA20ED /* Base in Resources */,
@@ -461,7 +484,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				18180D672BFC449800CA20ED /* NetworkManager.swift in Sources */,
-				18466B612BFEF54E00E47513 /* MessageViewController.swift in Sources */,
+				18466B612BFEF54E00E47513 /* ChatViewController.swift in Sources */,
+				18A982E12C09774D00F2C89F /* UserListCell.swift in Sources */,
+				18A982DD2C09765800F2C89F /* PeopleCell.swift in Sources */,
 				18466B5E2BFEF42600E47513 /* MessageCell.swift in Sources */,
 				18180D452BFC382700CA20ED /* AppStoryboard.swift in Sources */,
 				18180D712BFC482000CA20ED /* String.swift in Sources */,
@@ -471,16 +496,19 @@
 				18466B662BFF006800E47513 /* Date .swift in Sources */,
 				18180D402BFC370300CA20ED /* UIView.swift in Sources */,
 				18180D112BFC350E00CA20ED /* LoginViewController.swift in Sources */,
-				18180D492BFC3EA400CA20ED /* ChatListViewController.swift in Sources */,
+				18180D492BFC3EA400CA20ED /* HomeViewController.swift in Sources */,
 				18180D6D2BFC45B800CA20ED /* AuthViewModel.swift in Sources */,
 				18180D622BFC432C00CA20ED /* User.swift in Sources */,
 				18180D612BFC432C00CA20ED /* BaseResponse.swift in Sources */,
 				18180D0D2BFC350E00CA20ED /* AppDelegate.swift in Sources */,
-				18180D6E2BFC45B800CA20ED /* ChatListsViewModel.swift in Sources */,
+				18180D6E2BFC45B800CA20ED /* UsersViewModel.swift in Sources */,
+				18A982E52C09866500F2C89F /* Routes.swift in Sources */,
 				18180D4F2BFC41D000CA20ED /* BaseViewController.swift in Sources */,
+				18A982E72C098FB100F2C89F /* AlignedCollectionViewFlowLayout.swift in Sources */,
 				18180D472BFC39F700CA20ED /* NSObject .swift in Sources */,
 				18180D0F2BFC350E00CA20ED /* SceneDelegate.swift in Sources */,
 				18CB3AF52C0092F200B943E5 /* PaddingLabel.swift in Sources */,
+				18A982E32C09861100F2C89F /* URL.swift in Sources */,
 				18180D762BFC49E800CA20ED /* ChatCell.swift in Sources */,
 				18180D642BFC438C00CA20ED /* UIColor.swift in Sources */,
 				18180D7A2BFC54AC00CA20ED /* AppTextField.swift in Sources */,
