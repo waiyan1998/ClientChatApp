@@ -29,13 +29,13 @@ class LoginViewController: BaseViewController {
     @IBAction func ClickLogin(_ sender: Any) {
         //viewModel.username = username_TF.text ?? ""
         //viewModel.password = password_TF.text ?? ""
+        print(viewModel.username,viewModel.password)
         self.viewModel.login()
         
     }
     
     private func setupBindings() {
-        
-        
+     
         // Bind username text field changes to the view model's username property
         username_TF.publisher(for: \.text)
             .compactMap { $0 }

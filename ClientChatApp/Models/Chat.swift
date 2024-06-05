@@ -7,9 +7,8 @@
 
 import Foundation
 struct Chat  : Codable {
-
+    
     let chat_id: String?
-    let chat_type: String?
     let members : [User]?
     
 }

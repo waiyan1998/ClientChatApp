@@ -21,14 +21,14 @@ class AuthViewModel: ObservableObject {
     var cancellables: Set<AnyCancellable> = []
     
     func login() {
-        
-        
-        guard username.isValid || password.isValid   else {
+        print("login")
+         guard !username.isEmpty || !password.isEmpty   else {
             self.isShowingAlert = true
             return
         }
         
         isLoading = true
+        isNavigate  = false
         error = nil
         
      
@@ -55,11 +55,10 @@ class AuthViewModel: ObservableObject {
                 }
                 
                 self.isNavigate = true
-                LocalStorage.shared.setUserInfo(user_token)
+                LocalStorage.shared.setData(user_token, .userToken)
                 print("Post received: \(user_token)")
             })
             .store(in: &cancellables)
-        
         
     }
     

@@ -3,12 +3,7 @@ import Foundation
 
 extension String {
     
-    var isValid  : Bool {
-        
-        return self == "" || self.isEmpty  ? false : true
-        
-    }
-    
+
     var firstCharactor: String? {
            guard self.count > 0 else {
                return nil

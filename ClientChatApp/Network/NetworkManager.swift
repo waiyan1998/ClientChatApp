@@ -1,9 +1,3 @@
-//
-//  LoginModel.swift
-//  RealtimeChatApp
-//
-//  Created by  Brycen Myanmar  on 15/05/2024.
-//
 
 import Foundation
 import Combine
@@ -41,15 +35,21 @@ enum NetworkError: Error {
 
 struct NetworkManager {
     
-    static func execute<T: Codable>(_ request: APIRequest , _ T : T.Type) -> AnyPublisher<BaseResponse<T>, NetworkError> {
-        guard let url = URL(string: request.path) else {
+    static func execute<T: Codable>(_ request: APIRequest , with queryComponents  : [URLQueryItem]?  = nil   , _ T : T.Type) -> AnyPublisher<BaseResponse<T>, NetworkError> {
+        guard var url = URL(string: request.path) else {
             return Fail(error: .invalidURL).eraseToAnyPublisher()
+        }
+        if  let queryItems = queryComponents {
+            url.append(queryItems: queryItems)
         }
         
         var urlRequest = URLRequest(url: url)
+        
         urlRequest.httpMethod = request.method.rawValue
         urlRequest.allHTTPHeaderFields = request.headers
+        urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
         urlRequest.httpBody = request.body
+        print(urlRequest)
         
         return URLSession.shared.dataTaskPublisher(for: urlRequest)
             .tryMap { data, response in
@@ -77,9 +77,6 @@ struct NetworkManager {
         
         
     }
-    
-   
-    
     
 }
     

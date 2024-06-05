@@ -8,32 +8,58 @@
 import UIKit
 
 class HomeViewController: UIViewController {
+  
+
+    var userlists : [User] = []
+    var chatlists : [Chat] = []
     
-    private enum section : String,CaseIterable{
-        case UserList = "People"
-        case Chat = "Chats"
+    @IBOutlet weak var CollectionView : UICollectionView!
+    {
+        didSet {
+            CollectionView.dataSource = self
+            CollectionView.delegate = self
+            CollectionView.registerForCell(strID: PeopleCell.nibName)
+           
+        }
     }
     
+   
     @IBOutlet weak var TableView   : UITableView!{
         didSet{
-            TableView.registerForCell(strID: ChatCell.identifier)
-            TableView.registerForCell(strID: UserListCell.identifier)
+            TableView.delegate = self
+            TableView.dataSource = self 
+            TableView.registerForCell(strID: ChatCell.nibName)
         }
     }
    
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        let layout = CollectionView.collectionViewLayout as? AlignedCollectionViewFlowLayout
+        layout?.horizontalAlignment = .left
         
-       
+        UsersViewModel.shared.getUserLists()
+        UsersViewModel.shared.getUserDetail()
+        setupBinding()
         // Do any additional setup after loading the view.
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.navigationController?.navigationItem.hidesBackButton = true 
+        self.navigationController?.isNavigationBarHidden  = true
 
     }
     
-
+   func setupBinding ()
+    {
+        UsersViewModel.shared.$userlists
+            .receive(on: RunLoop.main)
+            .sink { [weak self ] lists  in
+                self?.userlists  = lists
+                self?.CollectionView.reloadData()
+            }
+            .store(in: &UsersViewModel.shared.cancellables)
+    }
   
     /*
     // MARK: - Navigation
@@ -48,40 +74,36 @@ class HomeViewController: UIViewController {
 }
 
 extension HomeViewController  : UITableViewDelegate , UITableViewDataSource {
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return HomeViewController.section.allCases.count
-    }
+   
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        switch HomeViewController.section.allCases[section] {
-        case .UserList:
-            return 1
-        case .Chat:
-            return UsersViewModel.shared.chatlists.count
-        }
+        return 2
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        switch HomeViewController.section.allCases[indexPath.section] {
-            
-        case .UserList:
-            let cell = tableView.dequeueReusableCell(withIdentifier: UserListCell.identifier, for: indexPath) as! UserListCell
-                
-            return cell
-        case .Chat :
-            let cell = tableView.dequeueReusableCell(withIdentifier: ChatCell.identifier, for: indexPath) as! ChatCell
-                
-            return cell
-        }
+      let cell = tableView.dequeueReusableCell(withIdentifier: ChatCell.identifier, for: indexPath) as! ChatCell
+        return cell
+    }
         
-        
-        
+    
+    
+}
+
+extension HomeViewController  : UICollectionViewDelegate,UICollectionViewDataSource{
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return UsersViewModel.shared.userlists.count
     }
     
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return HomeViewController.section.allCases[section].rawValue
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PeopleCell.identifier, for: indexPath) as! PeopleCell
+            cell.data = self.userlists[indexPath.row]
+        return cell
     }
     
+   
+    
+
 }

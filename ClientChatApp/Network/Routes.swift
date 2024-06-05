@@ -10,11 +10,18 @@ final class  Routes {
          static let register = api + "users/register"
          static let lists = api + "users/lists"
     }
+    final class User {
+         static let detail = api + "users/me"
+        
+    }
     
     final class Chat {
          static let connect = api_chat + "chat/connect"
          static let message = api_chat + "chat/messages"
          static let lists = api + "chat/lists"
+         static let add  = api + "chat/add"
+         static let send  = api + "chat/send"
+         static let getMessages  = api + "chat/messages"
     }
 }
 

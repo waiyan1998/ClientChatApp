@@ -30,11 +30,6 @@ class ChatCell: UITableViewCell {
             return
         }
         
-        let vc = ChatViewController.initiate(appStoryBoard: .Main)
-            vc.chat_id = data?.chat_id ?? "" 
-        
-        container.show(vc , sender: nil )
-        
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {

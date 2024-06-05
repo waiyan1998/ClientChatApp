@@ -49,11 +49,6 @@
             <point key="canvasLocation" x="432" y="-61"/>
         </tableViewCell>
     </objects>
-    <designables>
-        <designable name="zTW-cc-jPH">
-            <size key="intrinsicContentSize" width="68.333333333333343" height="25.666666666666664"/>
-        </designable>
-    </designables>
     <resources>
         <systemColor name="systemGreenColor">
             <color red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

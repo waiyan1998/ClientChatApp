@@ -22,7 +22,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         let window = UIWindow(windowScene: windowScene)
         
-        if LocalStorage.shared.getUserInfo()?.access_token?.isValid  ?? false  {
+        if !LocalStorage.shared.token.isEmpty {
           
             let vc = HomeViewController.initiate(appStoryBoard: .Main)
             let navigation = UINavigationController(rootViewController: vc)
