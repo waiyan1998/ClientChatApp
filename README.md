@@ -2,6 +2,7 @@
 ![chat-icon](https://github.com/waiyan1998/ClientChatApp/assets/51941650/fee0fdcc-0ea3-4448-a995-94e17e56996c)  
 iOS Chat App 
 - UIkit
+- WebSocket,Basic Authentication
 - Combine
 - MVVN
 - Backend (Swift Vapor) project - https://github.com/waiyan1998/RealtimeChatAPI_Vapor/tree/develop
