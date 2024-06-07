@@ -41,7 +41,6 @@
 		18180D772BFC49E800CA20ED /* ChatCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18180D752BFC49E800CA20ED /* ChatCell.xib */; };
 		18180D7A2BFC54AC00CA20ED /* AppTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18180D792BFC54AC00CA20ED /* AppTextField.swift */; };
 		18466B5E2BFEF42600E47513 /* MessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18466B5C2BFEF42600E47513 /* MessageCell.swift */; };
-		18466B5F2BFEF42600E47513 /* MessageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18466B5D2BFEF42600E47513 /* MessageCell.xib */; };
 		18466B612BFEF54E00E47513 /* ChatViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18466B602BFEF54E00E47513 /* ChatViewController.swift */; };
 		18466B662BFF006800E47513 /* Date .swift in Sources */ = {isa = PBXBuildFile; fileRef = 18466B652BFF006800E47513 /* Date .swift */; };
 		18A982DC2C09765800F2C89F /* PeopleCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 18A982DB2C09765800F2C89F /* PeopleCell.xib */; };
@@ -109,7 +108,6 @@
 		18180D752BFC49E800CA20ED /* ChatCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChatCell.xib; sourceTree = "<group>"; };
 		18180D792BFC54AC00CA20ED /* AppTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppTextField.swift; sourceTree = "<group>"; };
 		18466B5C2BFEF42600E47513 /* MessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageCell.swift; sourceTree = "<group>"; };
-		18466B5D2BFEF42600E47513 /* MessageCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MessageCell.xib; sourceTree = "<group>"; };
 		18466B602BFEF54E00E47513 /* ChatViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatViewController.swift; sourceTree = "<group>"; };
 		18466B652BFF006800E47513 /* Date .swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date .swift"; sourceTree = "<group>"; };
 		18A982DA2C09765800F2C89F /* PeopleCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeopleCell.swift; sourceTree = "<group>"; };
@@ -330,7 +328,6 @@
 			isa = PBXGroup;
 			children = (
 				18180D752BFC49E800CA20ED /* ChatCell.xib */,
-				18466B5D2BFEF42600E47513 /* MessageCell.xib */,
 				18A982DB2C09765800F2C89F /* PeopleCell.xib */,
 			);
 			path = Xibs;
@@ -445,7 +442,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				18180D3D2BFC354700CA20ED /* Auth.storyboard in Resources */,
-				18466B5F2BFEF42600E47513 /* MessageCell.xib in Resources */,
 				18180D162BFC350F00CA20ED /* Assets.xcassets in Resources */,
 				18A982DC2C09765800F2C89F /* PeopleCell.xib in Resources */,
 				18180D772BFC49E800CA20ED /* ChatCell.xib in Resources */,

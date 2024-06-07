@@ -3,11 +3,7 @@ import Foundation
 import Combine
 
 class MessageViewModel: ObservableObject {
-    enum WebSocketStatus : String , Codable {
-        case refresh
-        case fail
-    }
-  
+
 
     @Published var messages: [Message] = []
     @Published var messageText: String = ""
@@ -20,33 +16,46 @@ class MessageViewModel: ObservableObject {
     let encoder = JSONEncoder()
     
 
-  private let webSocketTask: URLSessionWebSocketTask
+    private var  webSocketTask : URLSessionWebSocketTask!
 
-    init( _ id : String ) {
-        print(id)
-        var url = URL(string: Routes.Chat.connect)! 
+    init( chat_id : String ) {
         
-   
-        url.append(queryItems: [  URLQueryItem(name: "id", value: LocalStorage.shared.user_id)   ,  URLQueryItem(name: "redirect_id", value: id ) ])
+        let request = WebSocketRequest()
         
-        print(url)
-            webSocketTask = URLSession.shared.webSocketTask(with: url)
-            webSocketTask.resume()
-            listenForMessages()
+        guard let url = URL(string: request.path)?.appending([URLQueryItem(name: "id", value: chat_id)]) else {
+            return
         }
+       
+        var urlRequest = URLRequest(url: url)
+            urlRequest.httpMethod = request.method.rawValue
+            urlRequest.allHTTPHeaderFields = request.headers
+            urlRequest.setValue("application/json", forHTTPHeaderField: "Content-Type")
+            urlRequest.httpBody = request.body
+        
+        
+        webSocketTask = URLSession.shared.webSocketTask(with: urlRequest)
+        webSocketTask.resume()
+        self.listenForMessages()
+        
+        
+    }
+        
 
     func sendMessage( _ message : Message) {
-        
+       
         guard let data = try? encoder.encode(message) else{
             return
         }
         let messageText = String(data: data , encoding: .utf8) ?? ""
-            print(messageText)
+        
+        
         webSocketTask.send(.string(messageText)) { error in
                 if let error = error {
                     print("Error sending message:", error)
                 }else{
-                    self.messages.append(message)
+                    print("sent")
+                 
+                   
                 }
             }
         
@@ -102,10 +111,11 @@ class MessageViewModel: ObservableObject {
               case .success(let message):
                  
                 if case let .string(text) = message {
-                    print("receiving message:" , text )
+                   
                     guard let m = text.decode(as: Message.self) else { return }
                     
                     self.messages.append(m)
+                    
                     
                 }
               case .failure(let error):
@@ -113,7 +123,9 @@ class MessageViewModel: ObservableObject {
                 print("Error receiving message:", error)
                   
               }
+          self.listenForMessages()
             }
+      
     }
 
     deinit {
@@ -143,5 +155,17 @@ struct SendMessageRequest : APIRequest {
         self.body = try? JSONEncoder().encode(message)
     }
     
+    
+}
+
+struct WebSocketRequest : APIRequest {
+    
+    var path: String { Routes.Chat.connect  }
+    
+    var method: HTTPMethod { .GET }
+    
+    var headers: [String : String]  { [ "Authorization" : "Bearer " + LocalStorage.shared.token ] }
+    
+    var body: Data?
     
 }

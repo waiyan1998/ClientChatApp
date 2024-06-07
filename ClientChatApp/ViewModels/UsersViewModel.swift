@@ -49,7 +49,7 @@ class UsersViewModel: ObservableObject {
                    
                     self.userlists = data
                     
-                    print("Post received: \(self.userlists)")
+                   
                 })
             .store(in: &cancellables)
          

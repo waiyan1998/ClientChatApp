@@ -22,7 +22,7 @@ class PeopleCell: UICollectionViewCell {
     @IBOutlet weak var Name_Lb : UILabel!
     @IBOutlet weak var status_imgView : UIImageView!
     
-    var data : User?{
+     var data : User?{
         didSet{
             self.Name_Lb.text = data?.username?.firstCharactor ?? "A"
         }

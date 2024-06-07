@@ -10,7 +10,13 @@ import UIKit
 class ChatViewController: UIViewController {
     
   
-     var chat : Chat?
+    var chat : Chat?
+    private var messages  : [Message] = []
+    {
+        didSet {
+            TableView.reloadData()
+        }
+    }
   
     
     @IBOutlet weak var TableView   : UITableView!{
@@ -47,8 +53,10 @@ class ChatViewController: UIViewController {
         viewModel.$messages
             .receive(on: RunLoop.main)
             .sink { [weak self] lists in
-                print(lists)
-                self?.TableView.reloadData()
+                for l in lists{
+                    print(l.sender_id , l.content)
+                }
+                self?.messages = lists
             }
             .store(in: &viewModel.cancellables)
     }
@@ -57,7 +65,8 @@ class ChatViewController: UIViewController {
         super.viewWillAppear(animated)
         self.navigationController?.isNavigationBarHidden = false
         self.navigationController?.navigationItem.hidesBackButton = false
-        self.viewModel = MessageViewModel( redirect_id )
+       
+        viewModel = MessageViewModel(chat_id: self.chat?.chat_id ?? "" )
         setupBindings()
     }
   
@@ -82,14 +91,11 @@ class ChatViewController: UIViewController {
 extension ChatViewController : UITableViewDelegate , UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        viewModel.messages.count
+        self.messages.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: MessageCell.identifier, for: indexPath) as! MessageCell
-        cell.message_lb.text = viewModel.messages[indexPath.row].content ?? ""
-        cell.isSender = (viewModel.messages[indexPath.row].sender_id ?? ""  == LocalStorage.shared.user_id )
-          
+        let cell = MessageCell(self.messages[indexPath.row] , isSender:  self.messages[indexPath.row].sender_id == LocalStorage.shared.user_id )
         return cell
     }
     

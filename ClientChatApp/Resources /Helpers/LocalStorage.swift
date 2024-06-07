@@ -47,7 +47,7 @@ class LocalStorage {
     }
     
     func getData < T : Codable > ( key : UserDefaultKey , _ type : T.Type ) -> T? {
-        print("getUserInfo")
+        
         
         guard let archivedData = defaults.data(forKey: key.rawValue) else {
             return nil

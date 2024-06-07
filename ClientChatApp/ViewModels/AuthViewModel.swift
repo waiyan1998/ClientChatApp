@@ -56,7 +56,7 @@ class AuthViewModel: ObservableObject {
                 
                 self.isNavigate = true
                 LocalStorage.shared.setData(user_token, .userToken)
-                print("Post received: \(user_token)")
+                
             })
             .store(in: &cancellables)
         
