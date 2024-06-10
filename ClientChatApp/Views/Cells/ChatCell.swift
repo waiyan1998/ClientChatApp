@@ -11,8 +11,10 @@ class ChatCell: UITableViewCell {
      var data : Chat?
     {
         didSet {
-            self.NameIcon_Label.text = data?.members?.first?.username?.firstCharactor
-            self.Name_Label.text = data?.members?.map({ $0.username ?? "" }).joined(separator: ",")
+            guard let user = data?.members?.filter({ $0.user_id != LocalStorage.shared.user_id }).first else { return }
+            
+            self.NameIcon_Label.text = user.username?.firstCharactor
+            self.Name_Label.text = user.username
         }
     }
     
@@ -29,6 +31,9 @@ class ChatCell: UITableViewCell {
         guard let container = self.containerVC() else{
             return
         }
+        let chatVC = ChatViewController.initiate(appStoryBoard: .Main)
+            chatVC.chat  = self.data
+        container.show(chatVC, sender: nil)
         
     }
     

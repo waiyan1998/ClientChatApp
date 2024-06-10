@@ -18,7 +18,7 @@ final class  Routes {
     final class Chat {
          static let connect = api_chat + "chat/connect"
          static let message = api_chat + "chat/messages"
-         static let lists = api + "chat/lists"
+         static let lists = api + "chat/getlists"
          static let add  = api + "chat/add"
          static let send  = api + "chat/send"
          static let getMessages  = api + "chat/messages"

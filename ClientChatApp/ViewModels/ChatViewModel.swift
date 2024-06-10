@@ -4,6 +4,7 @@ import Foundation
 import Combine
 
 final class ChatViewModel {
+    static let shared = ChatViewModel()
     
     @Published var chatlists : [Chat] = []
     @Published var chat : Chat?
@@ -47,6 +48,41 @@ final class ChatViewModel {
                 })
             .store(in: &cancellables)
         
+    }
+    
+    func getChatlists() {
+        print("getChatlists")
+        isLoading = true
+        isNavigate = false
+        
+        let request = ChatListsRequest()
+        print(request)
+        
+        NetworkManager.execute(request , Chat.self )
+            .receive(on: RunLoop.main)
+            .sink(receiveCompletion: { completion in
+                self.isLoading = false
+                
+                    switch completion {
+                    case .finished: break
+                    case .failure(let error):
+                        self.error = error
+                        print("Failed to fetch data: \(error)")
+                    }
+                
+                }, receiveValue: { response in
+                  
+                print(response)
+                    guard let  chats = response.data , response.statusCode ?? 0 > 0  else {
+                        self.isShowingAlert = true
+                        return
+                    }
+                    self.chatlists = chats
+                    self.isNavigate = true
+                  
+                    print("Post received: \(chats)")
+                })
+            .store(in: &cancellables)
     }
     
     

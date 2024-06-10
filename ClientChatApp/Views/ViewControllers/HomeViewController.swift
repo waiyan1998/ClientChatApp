@@ -10,8 +10,8 @@ import UIKit
 class HomeViewController: UIViewController {
   
 
-    var userlists : [User] = []
-    var chatlists : [Chat] = []
+    private var userlists : [User] = []
+    private var chatlists : [Chat] = []
     
     @IBOutlet weak var CollectionView : UICollectionView!
     {
@@ -40,6 +40,8 @@ class HomeViewController: UIViewController {
         
         UsersViewModel.shared.getUserLists()
         UsersViewModel.shared.getUserDetail()
+        ChatViewModel.shared.getChatlists()
+        
         setupBinding()
         // Do any additional setup after loading the view.
     }
@@ -59,6 +61,14 @@ class HomeViewController: UIViewController {
                 self?.CollectionView.reloadData()
             }
             .store(in: &UsersViewModel.shared.cancellables)
+        
+        ChatViewModel.shared.$chatlists
+            .receive(on: RunLoop.main)
+            .sink { [weak self ] lists  in
+                self?.chatlists  = lists
+                self?.TableView.reloadData()
+            }
+            .store(in: &ChatViewModel.shared.cancellables)
     }
   
     /*
@@ -78,12 +88,13 @@ extension HomeViewController  : UITableViewDelegate , UITableViewDataSource {
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return self.chatlists.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
       let cell = tableView.dequeueReusableCell(withIdentifier: ChatCell.identifier, for: indexPath) as! ChatCell
+          cell.data = self.chatlists[indexPath.row]
         return cell
     }
         
