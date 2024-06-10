@@ -6,7 +6,7 @@ iOS Chat App
 - Authentication
 - Combine
 - MVVN
-- Backend (Swift Vapor) project - https://github.com/waiyan1998/RealtimeChatAPI_Vapor/tree/develop
+- Backend (Swift Vapor) project - https://github.com/waiyan1998/RealtimeChatAPI_Vapor
 
 Screenshots
 
