@@ -1,9 +1,4 @@
-//
-//  AppDelegate.swift
-//  ClientChatApp
-//
-//  Created by  Brycen Myanmar  on 21/05/2024.
-//
+
 
 import UIKit
 

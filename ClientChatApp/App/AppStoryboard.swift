@@ -1,26 +1,6 @@
 
 
-//import Foundation
-//import UIKit
-//
-//extension UIViewController {
-//    
-//   
-//    enum AppStoryboard : String {
-//        case Main = "Main"
-//        case Auth = "Auth"
-//        
-//    }
-//    
-//    static func instantiateViewController <T :UIViewController >( name : AppStoryboard ) -> T? {
-//        
-//        let storyboard = UIStoryboard(name: name.rawValue, bundle: nil)
-//        let vc = storyboard.instantiateViewController(withIdentifier: "\(T.self)" ) as! T
-//        
-//        return vc
-//    }
-//    
-//}
+
 
 import UIKit
 
