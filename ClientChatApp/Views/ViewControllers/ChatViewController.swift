@@ -53,9 +53,8 @@ class ChatViewController: UIViewController {
         viewModel.$messages
             .receive(on: RunLoop.main)
             .sink { [weak self] lists in
-                for l in lists{
-                    print(l.sender_id , l.content)
-                }
+                print(lists)
+                
                 self?.messages = lists
             }
             .store(in: &viewModel.cancellables)
@@ -68,6 +67,7 @@ class ChatViewController: UIViewController {
        
         viewModel = MessageViewModel(chat_id: self.chat?.chat_id ?? "" )
         setupBindings()
+        viewModel.getMessages(self.chat?.chat_id ?? "" )
     }
   
      @IBAction func sendClick(_ sender: UIButton) {
