@@ -2,7 +2,7 @@
 //  PeopleCell.swift
 //  ClientChatApp
 //
-//  Created by  Brycen Myanmar  on 31/05/2024.
+//  Created by Wai Yan Pyae Sone  on 31/05/2024.
 //
 
 import UIKit
