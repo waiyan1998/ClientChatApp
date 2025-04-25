@@ -2,7 +2,7 @@
 //  MessageViewController.swift
 //  ClientChatApp
 //
-//  Created by  Brycen Myanmar  on 23/05/2024.
+//  Created by Wai Yan Pyae Sone on 23/05/2024.
 //
 
 import UIKit
@@ -17,9 +17,6 @@ class ChatViewController: UIViewController {
             TableView.reloadData()
         }
     }
-  
-    
-    @IBOutlet weak var TableView   : UITableView!{
         didSet{
             TableView.registerForCell(strID: MessageCell.identifier)
         }
