@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  ClientChatApp
 //
-//  Created by  Brycen Myanmar  on 21/05/2024.
+//  Created by Wai Yan Pyae Sone on 21/05/2024.
 //
 
 import UIKit
