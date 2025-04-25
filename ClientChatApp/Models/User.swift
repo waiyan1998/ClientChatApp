@@ -2,7 +2,7 @@
 //  User.swift
 //  RealtimeChatApp
 //
-//  Created by  Brycen Myanmar  on 16/05/2024.
+//  Created by Wai Yan Pyae Sone on 16/05/2024.
 //
 
 import Foundation
